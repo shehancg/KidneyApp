@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:stretchColumns="1">
+
+        <!-- Table Header Row (Column Names) -->
+        <TableRow>
+            <!-- Column 1 Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/teal_700"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Patient ID"
+                android:textColor="#FFFFFF" />
+
+            <!-- Column 2 Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/teal_700"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Compatbility Score"
+                android:textColor="#FFFFFF" />
+
+            <!-- Add more columns as needed -->
+        </TableRow>
+
+        <!-- Table Data Rows -->
+        <!-- Add data rows dynamically in your Java/Kotlin code -->
+    </TableLayout>
+
+    <!--<Button
+        android:id="@+id/downloadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Download Excel" />-->
+</RelativeLayout>
