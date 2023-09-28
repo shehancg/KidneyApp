@@ -2,9 +2,11 @@ package com.example.kidneyapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -163,7 +165,13 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Define your API endpoint URL
-            String apiUrl = "https://noted-mink-legally.ngrok-free.app/predict"; // Replace with your API URL
+            String apiUrl = "http://kidneyflaskapp-env.eba-ph5m7v3r.us-east-1.elasticbeanstalk.com/predict";
+
+            // Before making the API request, create and show a ProgressDialog
+            ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(false); // Prevent users from dismissing the dialog
+            progressDialog.show();
 
             // Send JSON data to the API using Volley
             JsonObjectRequest request = new JsonObjectRequest(
@@ -171,7 +179,10 @@ public class MainActivity extends AppCompatActivity {
                     apiUrl,
                     jsonObject,
                     response -> {
-                        Toast.makeText(MainActivity.this, "Data sent successfully", Toast.LENGTH_SHORT).show();
+                        // Dismiss the ProgressDialog when the response arrives
+                        progressDialog.dismiss();
+
+                        //Toast.makeText(MainActivity.this, "Data sent successfully", Toast.LENGTH_SHORT).show();
                         // Handle a successful response from the API here
                         // You can access the response data using the "response" parameter
                         // Start the DisplayTableActivity and pass the response data
@@ -180,8 +191,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     },
                     error -> {
+                        progressDialog.dismiss();
                         // Handle API errors here
                         Toast.makeText(MainActivity.this, "API Error", Toast.LENGTH_SHORT).show();
+                        Log.e("YourTag", "Error message: " + error.getMessage());
                         // You can access error information using the "error" parameter
                     }
             );

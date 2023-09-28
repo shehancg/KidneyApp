@@ -3,9 +3,11 @@ package com.example.kidneyapp;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -158,7 +160,13 @@ public class AddDonorActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             // Define your API endpoint URL
-            String apiUrl = "https://noted-mink-legally.ngrok-free.app/addData"; // Replace with your API URL
+            String apiUrl = "http://kidneyflaskapp-env.eba-ph5m7v3r.us-east-1.elasticbeanstalk.com/addData"; // Replace with your API URL
+
+            // Before making the API request, create and show a ProgressDialog
+            ProgressDialog progressDialog = new ProgressDialog(AddDonorActivity.this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(false); // Prevent users from dismissing the dialog
+            progressDialog.show();
 
             // Send JSON data to the API using Volley
             JsonObjectRequest request = new JsonObjectRequest(
@@ -166,6 +174,8 @@ public class AddDonorActivity extends AppCompatActivity {
                     apiUrl,
                     jsonObject,
                     response -> {
+                        // Dismiss the ProgressDialog when the response arrives
+                        progressDialog.dismiss();
                         // Handle a successful response from the API here
                         try {
                             // Extract data from the JSON response, assuming it's an object with a key like "message"
@@ -188,6 +198,8 @@ public class AddDonorActivity extends AppCompatActivity {
                         }
                     },
                     error -> {
+                        // Dismiss the ProgressDialog when there's an error
+                        progressDialog.dismiss();
                         // Handle API errors here
                         if (error.networkResponse != null) {
                             int statusCode = error.networkResponse.statusCode;
@@ -205,6 +217,7 @@ public class AddDonorActivity extends AppCompatActivity {
                         } else {
                             // Handle other types of errors
                             Toast.makeText(AddDonorActivity.this, "Unknown Error", Toast.LENGTH_SHORT).show();
+                            Log.e("YourTag", "Error message: " + error.getMessage());
                         }
                     }
             );
