@@ -12,13 +12,13 @@
         android:padding="16dp"
         tools:context=".MainActivity">
 
-        <!--<EditText
-            android:id="@+id/editTextid"
+        <EditText
+            android:id="@+id/editTextId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Enter your ID"
-            android:inputType="number" />-->
+            android:hint="Enter Patient ID"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editText1"
@@ -128,7 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/teal_700"
-            android:text="ADD DONOR" />
+            android:text="ADD PATIENT" />
 
     </LinearLayout>
 </ScrollView>

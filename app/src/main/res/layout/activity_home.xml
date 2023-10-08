@@ -4,75 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".HomeActivity">
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="500dp"
-        android:layout_height="280dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homepg" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txt_homeUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppinssemibold"
-        android:text="Kidney Predictor"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_add"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="170dp"
-        android:layout_height="138dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/card"
-        android:drawableTop="@drawable/add"
-        android:elevation="4dp"
-        android:fontFamily="@font/poppinssemibold"
-        android:includeFontPadding="true"
-        android:lineSpacingExtra="28sp"
-        android:text="Add Donor"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:backgroundTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            <!-- First LinearLayout with Image and Text -->
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/homepg" />
 
-    <Button
-        android:id="@+id/btn_search"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_width="170dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/card"
-        android:drawableTop="@drawable/search"
-        android:elevation="4dp"
-        android:fontFamily="@font/poppinssemibold"
-        android:padding="2dp"
-        android:text="Check for Donor"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        app:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+            <TextView
+                android:id="@+id/txt_homeUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:text="Kidney Predictor"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Second LinearLayout with Content -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.1"
+                android:text="Kidney Predictor"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Add more UI elements as needed -->
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="160dp">
+
+            <LinearLayout
+                android:layout_width="380dp"
+                android:layout_height="400dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Add Patient Button -->
+                    <Button
+                        android:id="@+id/btn_add"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card"
+                        android:drawableTop="@drawable/add"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Add Patient"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:backgroundTint="@color/white" />
+
+                    <!-- Check for Patients Button -->
+                    <Button
+                        android:id="@+id/btn_search"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card"
+                        android:drawableTop="@drawable/search"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Check for Patients"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:backgroundTint="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <!-- Button 2 -->
+                    <Button
+                        android:id="@+id/btn_recent"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card"
+                        android:drawableTop="@drawable/search"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Recently Added"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:backgroundTint="@color/white" />
+
+                    <Button
+                        android:id="@+id/checkid"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card"
+                        android:drawableTop="@drawable/search"
+                        android:elevation="4dp"
+                        android:fontFamily="@font/poppinssemibold"
+                        android:text="Check By Id"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        app:backgroundTint="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
