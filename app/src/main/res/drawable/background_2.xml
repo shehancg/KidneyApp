@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:endColor="#E2CCDAD7"
+        android:startColor="#D2DCDA"
+        android:type="linear"
+        android:angle="45" /> <!-- Set the angle to 90 for top-to-bottom gradient -->
+ />
+</shape>
