@@ -12,10 +12,39 @@
         android:padding="16dp"
         tools:context=".MainActivity">
 
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:background="@drawable/round_backgroud"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/headdingtext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:letterSpacing="0.1"
+                android:text="Add Patient"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
         <EditText
             android:id="@+id/editTextId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="16dp"
             android:hint="Enter Patient ID"
             android:inputType="number" />
@@ -127,8 +156,11 @@
             android:id="@+id/sendButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_700"
-            android:text="ADD PATIENT" />
+            android:text="ADD PATIENT"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:backgroundTint="@color/blue" />
 
     </LinearLayout>
 </ScrollView>

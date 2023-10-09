@@ -21,8 +21,8 @@
             android:id="@+id/headdingtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
-            android:textStyle="bold"
+            android:textSize="22sp"
+            android:fontFamily="@font/poppinssemibold"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -31,7 +31,7 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:letterSpacing="0.1"
-            android:text="Check by Id" />
+            android:text="Search by ID" />
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:layout_marginBottom="300dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="2dp"
-        android:src="@drawable/img1"/>
+        android:src="@drawable/searchdoc"/>
     <RelativeLayout
         android:layout_marginTop="480dp"
         android:layout_marginStart="20dp"
@@ -59,12 +59,12 @@
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
-                android:hint="Enter the Patient's Id"
+                android:hint="Enter the Patient's ID"
                 android:padding="8dp"
                 android:gravity="center"
-                android:textColorHint="@color/teal_700"
+                android:textColorHint="@color/blue"
                 android:layout_marginStart="50dp"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/blue"
                 android:layout_marginEnd="50dp"/> <!-- Adjust padding as needed -->
         </LinearLayout>
         <RelativeLayout
@@ -82,11 +82,11 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:text="Search Patient"
-                android:textColor="#147F6A"
-                android:padding="8dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:backgroundTint="@color/white"/>
+                android:textColor="#fff"
+                android:padding="2dp"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppinssemibold"
+                app:backgroundTint="@color/blue"/>
         </RelativeLayout>
 
 

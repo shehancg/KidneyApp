@@ -4,6 +4,6 @@
     <solid android:color="#00FFFFFF" /> <!-- Background color of the border -->
     <stroke
         android:width="2dp"
-    android:color="#009688" />
+    android:color="#2487f7" />
     <corners android:radius="8dp" /> <!-- Border corner radius -->
 </shape>
