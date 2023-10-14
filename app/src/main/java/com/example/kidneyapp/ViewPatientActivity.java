@@ -62,15 +62,15 @@ public class ViewPatientActivity extends AppCompatActivity {
                 "\nHLA_A2:  " + patientData.getHLA_A2() +
                 "\nHLA_B1:  " + patientData.getHLA_B1() +
                 "\nHLA_B2:  " + patientData.getHLA_B2() +
-                "\nHLA_DR1: " + patientData.getHLA_DR1() +
-                "\nHLA_DR2: " + patientData.getHLA_DR2() +
-                "\nId:      " + patientData.getId() +
+                "\nHLA_DR1:  " + patientData.getHLA_DR1() +
+                "\nHLA_DR2:  " + patientData.getHLA_DR2() +
+                "\nID:  " + patientData.getId() +
                 "\nagHBs:   " + patientData.getAgHBs() +
-                "\nAge:     " + patientData.getAge() +
-                "\nanti_HBc: " + patientData.getAnti_HBc() +
-                "\nanti_HCV: " + patientData.getAnti_HCV() +
-                "\nRace:    " + patientData.getRace() +
-                "\nSex:     " + sexText; // Use sexText instead of patientData.getSex()
+                "\nAge:   " + patientData.getAge() +
+                "\nanti_HBc:  " + patientData.getAnti_HBc() +
+                "\nanti_HCV:  " + patientData.getAnti_HCV() +
+                "\nRace:  " + patientData.getRace() +
+                "\nSex:   " + sexText; // Use sexText instead of patientData.getSex()
 
         textView.setText(displayText);
     }

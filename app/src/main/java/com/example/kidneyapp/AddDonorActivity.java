@@ -153,7 +153,7 @@ public class AddDonorActivity extends AppCompatActivity {
             String text8 = editText8.getText().toString();
             String text9 = editText9.getText().toString();
             String text10 = editText10.getText().toString();
-            String text11 = editText11.getText().toString();
+            Integer text11 = Integer.valueOf(editText11.getText().toString());
 
             SpinnerItem selectedSpinner1Item = (SpinnerItem) spinner1.getSelectedItem();
             SpinnerItem selectedSpinner2Item = (SpinnerItem) spinner2.getSelectedItem();
@@ -229,7 +229,7 @@ public class AddDonorActivity extends AppCompatActivity {
                             if (statusCode >= 400) {
                                 // Handle the error here and display an appropriate message
                                 // You can parse the errorMessage JSON if it contains error details
-                                Toast.makeText(AddDonorActivity.this, "API Error: " + statusCode, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(AddDonorActivity.this, "ID Already Exists " + statusCode, Toast.LENGTH_SHORT).show();
                             } else {
                                 // Handle other network-related errors (e.g., connection issues)
                                 Toast.makeText(AddDonorActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
