@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CheckPatientId extends AppCompatActivity {
@@ -24,17 +26,23 @@ public class CheckPatientId extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the ID from the EditText
+                // Get the text from the EditText
                 String id = inputText.getText().toString();
 
-                // Create an intent to start AnotherActivity
-                Intent intent = new Intent(CheckPatientId.this, ViewPatientActivity.class);
+                // Check if the EditText is empty
+                if (id.isEmpty()) {
+                    // Show a toast message for validation
+                    Toast.makeText(CheckPatientId.this, "Please enter a patient ID", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Create an intent to start AnotherActivity
+                    Intent intent = new Intent(CheckPatientId.this, ViewPatientActivity.class);
 
-                // Pass the ID as an extra with the intent
-                intent.putExtra("patientId", id);
+                    // Pass the ID as an extra with the intent
+                    intent.putExtra("patientId", id);
 
-                // Start the other activity
-                startActivity(intent);
+                    // Start the other activity
+                    startActivity(intent);
+                }
             }
         });
     }
