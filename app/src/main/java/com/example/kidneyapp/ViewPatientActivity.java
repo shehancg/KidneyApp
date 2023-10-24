@@ -57,20 +57,20 @@ public class ViewPatientActivity extends AppCompatActivity {
         // Update UI elements with the fetched data
         String sexText = patientData.getSex().equals("M") ? "Male" : "Female";
 
-        String displayText = "Blood Type: " + patientData.getBlood_type() +
+        String displayText = "ID:  " + patientData.getId() +
+                "\nAge:   " + patientData.getAge() +
+                "\nRace:  " + patientData.getRace() +
+                "\nSex:   " + sexText +
+                "\nBlood Type: " + patientData.getBlood_type() +
                 "\nHLA_A1:  " + patientData.getHLA_A1() +
                 "\nHLA_A2:  " + patientData.getHLA_A2() +
                 "\nHLA_B1:  " + patientData.getHLA_B1() +
                 "\nHLA_B2:  " + patientData.getHLA_B2() +
                 "\nHLA_DR1:  " + patientData.getHLA_DR1() +
                 "\nHLA_DR2:  " + patientData.getHLA_DR2() +
-                "\nID:  " + patientData.getId() +
-                "\nagHBs:   " + patientData.getAgHBs() +
-                "\nAge:   " + patientData.getAge() +
                 "\nanti_HBc:  " + patientData.getAnti_HBc() +
                 "\nanti_HCV:  " + patientData.getAnti_HCV() +
-                "\nRace:  " + patientData.getRace() +
-                "\nSex:   " + sexText; // Use sexText instead of patientData.getSex()
+                "\nagHBs:   " + patientData.getAgHBs() ;
 
         textView.setText(displayText);
     }

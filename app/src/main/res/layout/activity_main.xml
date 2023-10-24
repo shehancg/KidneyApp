@@ -33,7 +33,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/poppinssemibold"
                 android:letterSpacing="0.1"
-                android:text="Check for Patients"
+                android:text="Donor Criteria"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
